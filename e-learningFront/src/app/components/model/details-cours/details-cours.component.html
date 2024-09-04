@@ -1,0 +1,106 @@
+<div class="drawer">
+    <div mat-dialog-title>
+      <h1>Cours  details</h1>
+      <p>name:{{name}}</p>
+    </div>
+  </div>
+  
+  <div mat-dialog-content>
+    <div mat-dialog-content>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="card card-margin">
+                        <div class="card-header no-border">
+                            <h5 class="card-title">etudiant</h5>
+                        </div>  
+                        <div class="card-body pt-0">
+                            <div class="widget-49">
+                                <div class="widget-49-title-wrapper">
+                                    <div class="widget-49-date-primary">
+                                        <img
+          class="image"
+          src="http://127.0.0.1:8000/api/categorie/{{ etudiant.image }}"
+        />
+                                    </div>
+                                    <div class="widget-49-meeting-info">
+                                        <span class="widget-49-pro-title">firstname: {{etudiant.firstname}}</span>
+                                        <span class="widget-49-meeting-time">lastname: {{etudiant.lastname}}</span>
+                                    </div>
+                                </div>
+                                <ol class="widget-49-meeting-points">
+                                    <span>email: {{etudiant.email}}</span>
+                                    <span>birthday: {{etudiant.birthday}}</span>
+                                   <span>teleN: {{etudiant.teleN}}</span>
+                                </ol>
+                            
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="card card-margin">
+                        <div class="card-header no-border">
+                            <h5 class="card-title">enseignant</h5>
+                        </div>
+                        <div class="card-body pt-0">
+                            <div class="widget-49">
+                                <div class="widget-49-title-wrapper">
+                                    <div class="widget-49-date-warning">
+                                        <img
+          class="image"
+          src="http://127.0.0.1:8000/api/categorie/{{ enseignant.image }}"
+        />
+                                    </div>
+                                    <div class="widget-49-meeting-info">
+                                        <span class="widget-49-pro-title">firstname: {{enseignant.firstname}}</span>
+                                        <span class="widget-49-meeting-time">lastname: {{enseignant.lastname}}</span>
+                                    </div>
+                                </div>
+                                <ol class="widget-49-meeting-points">
+                                    <span>email: {{enseignant.email}}</span>
+                                    <span>birthday: {{enseignant.birthday}}</span>
+                                    <span>ratings: {{enseignant.ratings}}</span>
+                                    <span>teleN: {{enseignant.teleN}}</span>
+                                </ol>
+                              
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="card card-margin">
+                        <div class="card-header no-border">
+                            <h5 class="card-title">categorie</h5>
+                        </div>
+                        <div class="card-body pt-0">
+                            <div class="widget-49">
+                                <div class="widget-49-title-wrapper">
+                                    <div class="widget-49-date-success">
+                                        <img
+                                        class="image"
+                                        src="http://127.0.0.1:8000/api/categorie/{{ categorie.image }}"
+                                      />
+                                    </div>
+                                    <div class="widget-49-meeting-info">
+                                        <span class="widget-49-pro-title">name:{{ categorie.name }}</span>
+                                        
+                                    </div>
+                                </div>
+                               
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+            
+      </div>
+   
+  </div>
+  
+  <div mat-dialog-actions class="action" class="flex">
+      <button mat-raised-button type="button" style="margin-right:10px;"  (click)="colosDialoge()"> <img src="../../../../assets/traverser.png"></button>
+  </div>
+  

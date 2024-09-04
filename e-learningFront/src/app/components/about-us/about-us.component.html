@@ -1,0 +1,69 @@
+<!-- Navbar (sit on top) -->
+<!DOCTYPE html>
+<html>
+<head>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+</head>
+<body class="body">
+
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+    <div class="w3-bar w3-white w3-wide w3-padding w3-card">
+      <a routerLink="/home" class="w3-bar-item w3-button"><b>E</b>-learning</a>
+      <!-- Float links to the right. Hide them on small screens -->
+      <div class="w3-right w3-hide-small">
+        <a routerLink="/home" class="w3-bar-item w3-button"> home</a>
+      <a routerLink="/listeEnseignant" class="w3-bar-item w3-button">liste Enseignant</a>
+      <a routerLink="/listeCours" class="w3-bar-item w3-button">liste Cours</a>
+      <a routerLink="/login" class="w3-bar-item w3-button">logout</a>
+      </div>
+    </div>
+  </div>
+
+
+
+<!-- Page content -->
+
+    <div class="body"> 
+        
+
+        <div class="w3-container w3-padding-32" id="about">
+            <input type="search" [(ngModel)]="text" class="form-control" placeholder="Recherche Client" aria-label="Recherche Client" aria-describedby="basic-addon1">
+        </div>
+        <div class="container">
+            <div class="row">
+              <div class="col-md-4" *ngFor="let p of enseignantf|paginate:{itemsPerPage:3,currentPage:page}">
+            <div class="blog-card blog-card-blog">
+              <div class="blog-card-image" >
+                <td><img  class="image" src="http://127.0.0.1:8000/api/categorie/{{p.image}}" onerror="this.onerror=null; this.src='../../../assets/sample-lesson-plan-new-teachers-lesson-plan_ART_4-3.jpeg';"></td>
+                  <div class="ripple-cont"></div>
+              </div>
+              <div class="blog-table">
+                  <h6 class="blog-category blog-text-success"><i class="far fa-newspaper"></i> News</h6>
+                  <h4 class="blog-card-caption">
+                 <b>name: </b> {{p.firstname}} {{p.lastname}}
+                  </h4>
+                  <p class="blog-card-description"> <b>email: </b> {{p.email}}</p>
+                  <p class="blog-card-description"> <b>ratings: </b><img *ngFor="let r of getRatings(p.ratings)" [src]="imageUrl" alt="example image"></p>
+                 
+              </div>
+          </div>
+          </div>
+          <div class="pagination"><pagination-controls (pageChange)="page=$event"></pagination-controls></div>
+              
+           
+            
+            </div>
+          </div>
+    </div>
+  
+
+ 
+
+</body>
+</html>
+

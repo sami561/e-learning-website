@@ -1,0 +1,55 @@
+<div style="display: flex; justify-content: flex-end; margin-right: 3rem">
+  <div class="box-2">
+    <button mat-mini-fab color="primary" aria-label="Example icon button with a plus one icon" (click)="openAddForm()">
+    <mat-icon>plus_one</mat-icon>
+  </button> </div>
+  
+ 
+</div>
+<div class="box-8">
+    <div class="content-box">
+        <table class="table">
+            <thead>
+                <tr>
+                   <th scope="col" >#</th> 
+                   <th scope="col" >name</th> 
+                   <th scope="col" >enseignant_id</th> 
+                   <th scope="col" >etudiant_id</th> 
+                   <th scope="col" >nombre_etudiant</th> 
+                   <th scope="col" >date</th> 
+                   <th scope="col">Supprimer</th>
+                   <th scope="col">update</th>
+                   <th scope="col">details</th>   
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let p of listecours|paginate:{itemsPerPage:4,currentPage:page}">
+                    <th scope="row">{{p.id}}</th>
+                    <td>{{p.name}}</td>
+                    <td>{{p.enseignant_id}}</td>
+                    <td>{{p.etudiant_id}}</td>
+                    <td>{{p.nombre_etudiant}}</td>
+                    <td>{{p.date}}</td>
+                    <td>
+                        <button mat-icon-button color="warn" (click)="deleteData(p.id)">
+                          <mat-icon>delete</mat-icon>
+                        </button>
+                      </td>
+                      <td>
+                        <button mat-icon-button color="primary" (click)="openEditForm(p)">
+                          <mat-icon>edit</mat-icon>
+                        </button>
+                      </td>
+                      <td>
+                        <button mat-icon-button color="primary" (click)="openDetailsForm(p.id)" >
+                        <img src="../../../assets/oeil (1).png">
+                        </button>
+                      </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+  </div>
+  <div class="pagination"><pagination-controls (pageChange)="page=$event"></pagination-controls></div>
+

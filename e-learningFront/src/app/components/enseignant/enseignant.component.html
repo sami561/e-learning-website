@@ -1,0 +1,57 @@
+<div style="display: flex; justify-content: flex-end; margin-right: 3rem">
+  <div class="box-2">
+    <button mat-mini-fab color="primary" aria-label="Example icon button with a plus one icon" (click)="openAddForm()">
+    <mat-icon>plus_one</mat-icon>
+  </button> </div>
+  
+ 
+</div>
+
+<div class="box-8">
+    <div class="content-box">
+        <table class="table">
+            <thead>
+                <tr>
+                   <th scope="col" >#</th> 
+                   <th scope="col" >image</th>
+                   <th scope="col" >firstname</th> 
+                   <th scope="col" >lastname</th> 
+                   <th scope="col" >email</th> 
+                   <th scope="col" >teleN</th> 
+                   <th scope="col" >ratings</th> 
+                   <th scope="col">Supprimer</th>
+                    <th scope="col">update</th>  
+                    <th scope="col">details</th> 
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let p of enseignant|paginate:{itemsPerPage:4,currentPage:page}">
+                    <th scope="row">{{p.id}}</th>
+                    <td><img  class="image" src="http://127.0.0.1:8000/api/categorie/{{p.image}}" onerror="this.onerror=null; this.src='../../../assets/utilisateur.png';"></td>
+                    <td>{{p.firstname}}</td>
+                    <td>{{p.lastname}}</td>
+                    <td>{{p.email}}</td>
+                    <td>{{p.teleN}}</td>
+                    <td>{{p.ratings}}</td>
+                    <td>
+                        <button mat-icon-button color="warn" (click)="deleteEnseignant(p.id)">
+                          <mat-icon>delete</mat-icon>
+                        </button>
+                      </td>
+                      <td>
+                        <button mat-icon-button color="primary" (click)="openEditForm(p)">
+                          <mat-icon>edit</mat-icon>
+                        </button>
+                      </td>
+                      <td>
+                        <button mat-icon-button color="primary" (click)="openDetailsForm(p.id)" >
+                        <img src="../../../assets/oeil (1).png">
+                        </button>
+                      </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+  </div>
+  <div class="pagination"><pagination-controls (pageChange)="page=$event"></pagination-controls></div>

@@ -1,0 +1,58 @@
+<div class="drawer">
+    <div mat-dialog-title>
+      <h1>Etudiant details</h1>
+      <div class="flex">
+        <img
+          class="image"
+          src="http://127.0.0.1:8000/api/categorie/{{ enseignants.image }}"
+        />
+      </div>
+    </div>
+  </div>
+  
+  <div mat-dialog-content>
+    <div mat-dialog-content>
+      <div class="row">
+        <div class="carre">
+          <div class="left">
+            <div>
+              <h1>firstname:</h1>
+              <p class="p">{{ enseignants.firstname }}</p>
+            </div>
+            <div>
+              <h1>lastname:</h1>
+              <p class="p">{{ enseignants.lastname }}</p>
+            </div>
+  
+            <div>
+              <h1>email:</h1>
+              <p class="p">{{ enseignants.email }}</p>
+            </div>
+           
+          </div>
+          <div class="vl"></div>
+          <div class="right">
+              <div>
+                  <h1>ratings:</h1>
+                  <p class="p">{{ enseignants.ratings }}</p>
+                </div>
+                <div>
+                  <h1>teleN:</h1>
+                  <p class="p">{{ enseignants.teleN }}</p>
+                </div>
+      
+                <div>
+                  <h1>birthday:</h1>
+                  <p class="p">{{ enseignants.birthday }}</p>
+                </div>
+               
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div mat-dialog-actions class="action" class="flex">
+      <button mat-raised-button type="button" style="margin-right:10px;"  (click)="colosDialoge()"> <img src="../../../../assets/traverser.png"></button>
+  </div>
+  

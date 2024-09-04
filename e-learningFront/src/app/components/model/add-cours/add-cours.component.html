@@ -1,0 +1,53 @@
+<div mat-dialog-title>
+    <h1>cours Form</h1>
+</div>
+<div mat-dialog-content>
+   <div class="row">
+    <mat-form-field appearance="outline" class="content">
+        <mat-label>name</mat-label>
+        <input matInput type="text" placeholder="name" [(ngModel)]="cours.name" >
+      </mat-form-field>
+     
+      <mat-form-field appearance="outline" class="content">
+        <mat-label>nombre_etudiant</mat-label>
+        <input matInput type="number" placeholder="nombre_etudiant" [(ngModel)]="cours.nombre_etudiant" >
+      </mat-form-field>
+     
+      <mat-form-field>
+        <mat-select placeholder="Select options" [(ngModel)]="cours.etudiant_id" >
+          <mat-option *ngFor="let p of etudiant" [value]="p.id ">
+            {{ p.firstname }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-select placeholder="Select options" [(ngModel)]="cours.enseignant_id" >
+          <mat-option *ngFor="let p of enseignant" [value]="p.id ">
+            {{ p.firstname }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field>
+     <mat-select placeholder="Select options" [(ngModel)]="cours.categorie_id" >
+          <mat-option *ngFor="let p of listecategorie" [value]="p.id ">
+            {{ p.name }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>   
+
+      <div class="form-group">
+        <label for="date_debut">Date</label>
+        <input type="date" class="form-control" id="birthday"  [(ngModel)]="cours.date" required #date="ngModel" [ngClass]="{'is-invalid': !date.valid && date.touched}">
+      </div>
+      
+   </div> 
+   
+</div>
+
+    <div mat-dialog-actions class="action" >
+        <button mat-raised-button type="button" style="margin-right:10px;" >Cancel</button>
+        <form (ngSubmit)="insertData()" >
+          <button mat-raised-button color="primary" type="submit">Save</button>
+        </form>
+        
+    </div>

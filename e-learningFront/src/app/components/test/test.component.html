@@ -1,0 +1,69 @@
+
+
+  <div class="mat-elevation-z8">
+    <table mat-table [dataSource]="dataSource" matSort>
+  
+      <!-- ID Column -->
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
+        <td mat-cell *matCellDef="let row"> {{row.id}} </td>
+      </ng-container>
+  
+      <!-- First Name Column -->
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> name </th>
+        <td mat-cell *matCellDef="let row"> {{row.name}}</td>
+      </ng-container>
+  
+      <!-- Last Name Column -->
+      <ng-container matColumnDef="enseignant_id">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>enseignant_id</th>
+        <td mat-cell *matCellDef="let row"> {{row.enseignant_id}} </td>
+      </ng-container>
+  
+      <!-- Email Column -->
+      <ng-container matColumnDef="nombre_etudiant">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> nombre_etudiant </th>
+        <td mat-cell *matCellDef="let row"> {{row.nombre_etudiant}} </td>
+      </ng-container>
+      <!-- Mobile Column -->
+      <ng-container matColumnDef="etudiant_id">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> etudiant_id </th>
+        <td mat-cell *matCellDef="let row"> {{row.etudiant_id}} </td>
+      </ng-container>
+  
+      <!-- BMI Result Column -->
+      <ng-container matColumnDef="bmiResult">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> BMI Result </th>
+        <td mat-cell *matCellDef="let row"> {{row.bmiResult}} </td>
+      </ng-container>
+  
+      <!-- Gender Column -->
+      <ng-container matColumnDef="gender">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Gender </th>
+        <td mat-cell *matCellDef="let row"> {{row.gender}} </td>
+      </ng-container>
+  
+      <!-- Package Column -->
+      <ng-container matColumnDef="package">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Package </th>
+        <td mat-cell *matCellDef="let row"> {{row.package}} </td>
+      </ng-container>
+  
+      <!-- Enquiry Date Column -->
+      <ng-container matColumnDef="enquiryDate">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Enquiry Date </th>
+        <td mat-cell *matCellDef="let row"> {{row.enquiryDate | date}} </td>
+      </ng-container>
+  
+     
+  
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  
+    
+    </table>
+  
+    <mat-paginator [pageSizeOptions]="[10, 25, 100]" aria-label="Select page of users"></mat-paginator>
+  </div>
+  

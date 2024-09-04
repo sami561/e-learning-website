@@ -1,0 +1,6 @@
+.action{
+    display: flex; justify-content: flex-end;
+}
+.star-rating > span::before {
+    color: yellow;
+  }

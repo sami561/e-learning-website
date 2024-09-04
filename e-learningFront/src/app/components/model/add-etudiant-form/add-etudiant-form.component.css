@@ -1,0 +1,7 @@
+.action{
+    display: flex; justify-content: flex-end;
+}
+.content{
+    margin-top: 3rem;
+    
+}

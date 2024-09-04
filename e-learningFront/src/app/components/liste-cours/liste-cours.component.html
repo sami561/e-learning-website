@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+</head>
+<body class="body">
+
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-wide w3-padding w3-card">
+    <a routerLink="/home" class="w3-bar-item w3-button"><b>E</b>-learning</a>
+    <!-- Float links to the right. Hide them on small screens -->
+    <div class="w3-right w3-hide-small">
+        <a routerLink="/home" class="w3-bar-item w3-button">home</a>
+      <a routerLink="/listeEnseignant" class="w3-bar-item w3-button">liste Enseignant</a>
+      <a routerLink="/listeCours" class="w3-bar-item w3-button">liste Cours</a>
+      <a routerLink="/login" class="w3-bar-item w3-button">logout</a>
+    
+    </div>
+  </div>
+</div>
+
+
+
+<div class="body"> 
+    <div class="container-xl px-4 mt-4">
+       
+        <hr class="mt-0 mb-4">
+        <div class="row">
+            <div class="col-xl-4">
+                <!-- Profile picture card-->
+                <div class="card mb-4 mb-xl-0">
+                    <div class="card-header">Recherche</div>
+                    <div class="card-body text-center">
+                        <input type="search"  [(ngModel)]="text" class="form-control" placeholder="Recherche Cours" aria-label="Recherche Cours" aria-describedby="basic-addon1">
+                       
+                            
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-8">
+                <!-- Cours details card-->
+                <div class="card mb-4">
+                    <div class="card-header">Cours Details</div>
+                    <div class="card-body">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                   <th scope="col" >#</th> 
+                                   <th scope="col" >name</th> 
+                                   <th scope="col" >enseignant</th> 
+                                   <th scope="col" >categorie</th> 
+                                   <th scope="col" >etudiant</th> 
+                                   <th scope="col" >nombre_etudiant</th> 
+                                   <th scope="col" >date</th> 
+                                    
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let p of coursf|paginate:{itemsPerPage:4,currentPage:page}">
+                                    <th scope="row">{{p.id}}</th>
+                                    <td>{{p.name}}</td>
+                                    <td>{{p.enseignant[0].firstname}}</td>
+                                    <td>{{p.categorie[0].name}}</td>
+                                    <td>{{p.etudiant[0].firstname}}</td>
+                                    <td>{{p.nombre_etudiant}}</td>
+                                    <td>{{p.date}}</td>
+                                   
+                                
+                                      
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="pagination"><pagination-controls (pageChange)="page=$event"></pagination-controls></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  
+</div>
+ 
+
+</body>
+</html>

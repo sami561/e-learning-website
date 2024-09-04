@@ -1,0 +1,33 @@
+<div id="mySidenav" class="sidenav" [ngClass]="status ? 'active' : 'inactive'">
+    <p class="logo"><span>E</span><b [ngClass]="status ? 'hidden' : 'visible'">-learning</b></p>
+    <a routerLink="/dashboard" class="icon-a"><i class="fa fa-home"></i>  <span [ngClass]="status ? 'hidden' : 'visible'">home</span></a>
+  <a routerLink="/dashboard/etudiant" class="icon-a"><i class="fa fa-lock icons"></i>  <span [ngClass]="status ? 'hidden' : 'visible'">Etudiant</span></a>
+    <a routerLink="/dashboard/enseignant"class="icon-a"><i class="fa fa-users icons"></i>   <span [ngClass]="status ? 'hidden' : 'visible'">Enseignant</span></a>
+    <a routerLink="/dashboard/cours"class="icon-a"><i class="fa fa-book icons"></i>   <span [ngClass]="status ? 'hidden' : 'visible'">Cours</span></a>
+    <a routerLink="/dashboard/categorie" class="icon-a"><i class="fa fa-dashboard icons"></i>   <span [ngClass]="status ? 'hidden' : 'visible'">categorie</span></a>
+    
+
+  </div>
+  <div id="main" [ngClass]="status ? 'fullw' : 'smallw'">
+    <div class="head">
+      <div class="col-div-6">
+  <span style="font-size:30px;cursor:pointer; color: white;" class="nav"  (click)="addToggle()">&#9776; Dashboard</span>
+  <span style="font-size:30px;cursor:pointer; color: white;" class="nav2"  (click)="addToggle()">&#9776; Dashboard</span>
+  
+  </div>
+    
+    <div class="col-div-6">
+    <div class="profile">
+      <img src="http://127.0.0.1:8000/api/categorie/{{image}}" class="pro-img" onerror="this.onerror=null; this.src='../../../assets/utilisateur.png';" alt=""/>
+      <p>{{firstname}} <span>{{role}}</span><a routerLink="/login" class="icon-a">logout</a></p>
+
+      
+    </div>
+  </div>
+    <div class="clearfix"></div>
+  </div>
+    <div class="clearfix"></div>
+    <br/>
+    
+   <router-outlet></router-outlet>
+  </div>

@@ -1,0 +1,8 @@
+.pagination{
+    margin-top: 0px;
+    background-color: #272c4a;;
+    height: 40px;
+    width: 260px;
+    display: flex;
+    margin-left: 11px;
+}

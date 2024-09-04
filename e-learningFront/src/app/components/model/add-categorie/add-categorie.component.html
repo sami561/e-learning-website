@@ -1,0 +1,28 @@
+<div mat-dialog-title>
+    <h1>Categorie Form</h1>
+</div>
+<form #f=ngForm (ngSubmit)="save(f)">
+<div mat-dialog-content>
+   <div class="row">
+    <mat-form-field appearance="outline" class="content">
+        <mat-label>name</mat-label>
+        <input matInput type="text" placeholder="name" ngModel name="name" required #name="ngModel" [ngClass]="{'is-invalid': !name.valid && name.touched}">
+      </mat-form-field>
+     
+      <div class="form-group">
+        <label for="exampleInputProd2">Choisir une image : </label>
+        <input type="file" class="form-control-file" id="photo" (change)="selectImage($event)">
+      </div>
+      
+   </div> 
+   
+</div>
+
+    <div mat-dialog-actions class="action" >
+       
+      
+          <button mat-raised-button color="primary" type="submit">Save</button>
+        
+        
+    </div>
+</form>

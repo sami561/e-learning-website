@@ -1,0 +1,18 @@
+.action{
+    display: flex;
+     justify-content: flex-end;
+     
+}
+.content{
+    margin-top: 3rem;
+    
+}
+.image{
+    width: 75px;
+    height: 75px;
+   
+}
+.flex{
+    display: flex;
+    justify-content: center;
+}
